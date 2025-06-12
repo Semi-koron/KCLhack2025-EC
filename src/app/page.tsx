@@ -1,6 +1,6 @@
 /**
  * ホームページ（商品一覧）
- * 
+ *
  * このページの学習ポイント：
  * 1. Next.js Link コンポーネントの使い方
  * 2. 配列のmapメソッドでのリスト表示
@@ -9,12 +9,11 @@
  * 5. Client Componentの必要性
  */
 
-'use client'; // クライアントコンポーネントとして指定（イベントハンドラーを使うため）
+"use client"; // クライアントコンポーネントとして指定（イベントハンドラーを使うため）
 
-import { useState, useMemo } from 'react'; // React hooks
-import Link from 'next/link'; // Next.js のLinkコンポーネント
+import { useState, useEffect } from "react"; // React hooks
 import styles from "./page.module.css";
-import ProductList from '@/components/ProductList';
+import ProductList from "@/components/ProductList";
 
 // 商品データの型定義（TypeScriptの学習）
 interface Product {
@@ -38,17 +37,20 @@ const mockProducts: Product[] = [
 
 export default function Home() {
   // 検索キーワードの状態管理
-  const [searchKeyword, setSearchKeyword] = useState('');
+  const [searchKeyword, setSearchKeyword] = useState("");
+  const [filteredProducts, setFilteredProducts] =
+    useState<Product[]>(mockProducts);
 
-  // 検索結果のフィルタリング（useMemoで最適化）
-  const filteredProducts = useMemo(() => {
-    if (!searchKeyword.trim()) {
-      return mockProducts; // 検索キーワードがない場合は全商品を表示
-    }
-    
-    return mockProducts.filter(product =>
-      product.name.toLowerCase().includes(searchKeyword.toLowerCase())
+  // 検索結果のフィルタリング
+  useEffect(() => {
+    const lowerCaseKeyword = searchKeyword.toLowerCase();
+    const results = mockProducts.filter(
+      (product) =>
+        product.name.toLowerCase().includes(lowerCaseKeyword) ||
+        (product.category &&
+          product.category.toLowerCase().includes(lowerCaseKeyword))
     );
+    setFilteredProducts(results);
   }, [searchKeyword]);
 
   return (
@@ -59,9 +61,9 @@ export default function Home() {
             <h1>ShopHub</h1>
           </div>
           <div className={styles.searchBar}>
-            <input 
-              type="text" 
-              placeholder="商品を検索..." 
+            <input
+              type="text"
+              placeholder="商品を検索..."
               value={searchKeyword}
               onChange={(e) => setSearchKeyword(e.target.value)}
             />

@@ -1,6 +1,6 @@
 /**
  * 商品一覧コンポーネント
- * 
+ *
  * このコンポーネントの学習ポイント：
  * 1. propsでデータを受け取る
  * 2. mapメソッドでのリスト表示
@@ -8,10 +8,10 @@
  * 4. コンポーネントの分割による再利用性
  */
 
-'use client';
+"use client";
 
-import Link from 'next/link';
-import styles from './ProductList.module.css';
+import Link from "next/link";
+import styles from "./index.module.css";
 
 // 商品データの型定義
 interface Product {
@@ -29,25 +29,27 @@ export default function ProductList({ products }: ProductListProps) {
   return (
     <div className={styles.productGrid}>
       {products.map((product) => (
-        <Link 
-          key={product.id} 
+        <Link
+          key={product.id}
           href={`/product/${product.id}`}
           className={styles.productLink}
         >
           <div className={styles.productCard}>
             <div className={styles.productImage}></div>
-            
+
             <div className={styles.productInfo}>
               {product.category && (
                 <span className={styles.categoryBadge}>{product.category}</span>
               )}
-              
+
               <h3 className={styles.productName}>{product.name}</h3>
-              
-              <p className={styles.productPrice}>¥{product.price.toLocaleString()}</p>
-              
+
+              <p className={styles.productPrice}>
+                ¥{product.price.toLocaleString()}
+              </p>
+
               <div className={styles.productActions}>
-                <button 
+                <button
                   className={styles.addToCartBtn}
                   onClick={(e) => {
                     e.preventDefault();
@@ -56,7 +58,7 @@ export default function ProductList({ products }: ProductListProps) {
                 >
                   カートに追加
                 </button>
-                <button 
+                <button
                   className={styles.wishlistBtn}
                   onClick={(e) => {
                     e.preventDefault();
