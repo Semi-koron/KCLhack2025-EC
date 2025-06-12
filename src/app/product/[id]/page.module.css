@@ -1,0 +1,265 @@
+/* 商品詳細ページのスタイル */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* パンくずリスト */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.breadcrumbLink {
+  color: #3182ce;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.breadcrumbLink:hover {
+  color: #2c5aa0;
+}
+
+.breadcrumbSeparator {
+  color: #718096;
+  margin: 0 8px;
+}
+
+.breadcrumbCurrent {
+  color: #4a5568;
+  font-weight: 500;
+}
+
+/* メインレイアウト */
+.productLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+/* 画像セクション */
+.imageSection {
+  position: sticky;
+  top: 24px;
+  height: fit-content;
+}
+
+.mainImage {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagePlaceholder {
+  font-size: 120px;
+  color: #cbd5e0;
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+/* 商品情報セクション */
+.infoSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.productTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.category {
+  color: #718096;
+  font-size: 14px;
+  margin: 0 0 16px 0;
+  font-weight: 500;
+}
+
+.priceSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0 24px 0;
+  padding: 16px;
+  background: #f7fafc;
+  border-radius: 8px;
+  border: 2px solid #e2e8f0;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e53e3e;
+}
+
+.stock {
+  font-size: 14px;
+  color: #38a169;
+  font-weight: 600;
+  background: #c6f6d5;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.description {
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 0 0 32px 0;
+  font-size: 16px;
+}
+
+/* 数量選択 */
+.quantitySection {
+  margin: 24px 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.quantityLabel {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.quantityControls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 4px;
+  background: white;
+}
+
+.quantityDisplay {
+  font-weight: 600;
+  color: #2d3748;
+  min-width: 40px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* アクションボタン */
+.actionButtons {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.addToCartButton {
+  flex: 2;
+}
+
+/* 詳細情報セクション */
+.detailsSection {
+  margin-top: 32px;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 24px 0;
+}
+
+.specTable {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.specRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.specRow:last-child {
+  border-bottom: none;
+}
+
+.specLabel {
+  font-weight: 600;
+  color: #4a5568;
+  min-width: 120px;
+}
+
+.specValue {
+  color: #2d3748;
+  font-weight: 500;
+}
+
+/* 商品が見つからない場合 */
+.notFound {
+  text-align: center;
+  padding: 64px 24px;
+}
+
+.notFound h1 {
+  font-size: 1.5rem;
+  color: #4a5568;
+  margin: 0 0 24px 0;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+
+  .productLayout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .imageSection {
+    position: static;
+  }
+
+  .productTitle {
+    font-size: 1.5rem;
+  }
+
+  .priceSection {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+  }
+
+  .quantitySection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .specRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
