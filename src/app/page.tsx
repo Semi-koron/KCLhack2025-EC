@@ -11,8 +11,10 @@
 
 'use client'; // クライアントコンポーネントとして指定（イベントハンドラーを使うため）
 
+import { useState, useMemo } from 'react'; // React hooks
 import Link from 'next/link'; // Next.js のLinkコンポーネント
 import styles from "./page.module.css";
+import ProductList from '@/components/ProductList';
 
 // 商品データの型定義（TypeScriptの学習）
 interface Product {
@@ -35,6 +37,20 @@ const mockProducts: Product[] = [
 ];
 
 export default function Home() {
+  // 検索キーワードの状態管理
+  const [searchKeyword, setSearchKeyword] = useState('');
+
+  // 検索結果のフィルタリング（useMemoで最適化）
+  const filteredProducts = useMemo(() => {
+    if (!searchKeyword.trim()) {
+      return mockProducts; // 検索キーワードがない場合は全商品を表示
+    }
+    
+    return mockProducts.filter(product =>
+      product.name.toLowerCase().includes(searchKeyword.toLowerCase())
+    );
+  }, [searchKeyword]);
+
   return (
     <div className={styles.page}>
       <header className={styles.header}>
@@ -43,72 +59,21 @@ export default function Home() {
             <h1>ShopHub</h1>
           </div>
           <div className={styles.searchBar}>
-            <input type="text" placeholder="商品を検索..." />
+            <input 
+              type="text" 
+              placeholder="商品を検索..." 
+              value={searchKeyword}
+              onChange={(e) => setSearchKeyword(e.target.value)}
+            />
           </div>
           <div className={styles.headerActions}>
             <button className={styles.cartButton}>🛒 カート (0)</button>
           </div>
         </div>
-        <nav className={styles.nav}>
-          <a href="#" className={styles.navItem}>すべて</a>
-          <a href="#" className={styles.navItem}>ファッション</a>
-          <a href="#" className={styles.navItem}>家電</a>
-          <a href="#" className={styles.navItem}>本・雑誌</a>
-          <a href="#" className={styles.navItem}>スポーツ</a>
-        </nav>
       </header>
       <main className={styles.main}>
-        <div className={styles.productGrid}>
-          {/* 
-            mapメソッドで配列の各商品をカードコンポーネントに変換
-            keyは一意の値を指定（Reactのリスト表示の必須項目）
-          */}
-          {mockProducts.map((product) => (
-            <Link 
-              key={product.id} 
-              href={`/product/${product.id}`} // 動的ルーティング：/product/1, /product/2 など
-              className={styles.productLink}
-            >
-              <div className={styles.productCard}>
-                {/* プレースホルダー画像エリア */}
-                <div className={styles.productImage}></div>
-                
-                <div className={styles.productInfo}>
-                  {/* カテゴリバッジ（条件付きレンダリングの例） */}
-                  {product.category && (
-                    <span className={styles.categoryBadge}>{product.category}</span>
-                  )}
-                  
-                  <h3 className={styles.productName}>{product.name}</h3>
-                  
-                  {/* toLocaleString()で3桁区切りの数値表示 */}
-                  <p className={styles.productPrice}>¥{product.price.toLocaleString()}</p>
-                  
-                  <div className={styles.productActions}>
-                    <button 
-                      className={styles.addToCartBtn}
-                      onClick={(e) => {
-                        e.preventDefault(); // Linkの遷移を防ぐ
-                        alert(`${product.name} をカートに追加しました！`);
-                      }}
-                    >
-                      カートに追加
-                    </button>
-                    <button 
-                      className={styles.wishlistBtn}
-                      onClick={(e) => {
-                        e.preventDefault(); // Linkの遷移を防ぐ
-                        alert(`${product.name} をお気に入りに追加しました！`);
-                      }}
-                    >
-                      ♡
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+        {/* ProductListコンポーネントを使用（フィルタリングされた商品を渡す） */}
+        <ProductList products={filteredProducts} />
       </main>
     </div>
   );
