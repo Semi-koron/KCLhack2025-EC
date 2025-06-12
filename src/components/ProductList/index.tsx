@@ -11,7 +11,7 @@
 'use client';
 
 import Link from 'next/link';
-import styles from '../app/page.module.css';
+import styles from './ProductList.module.css';
 
 // 商品データの型定義
 interface Product {

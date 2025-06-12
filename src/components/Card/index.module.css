@@ -1,0 +1,48 @@
+.card {
+  background: white;
+  border-radius: 8px;
+  transition: none;
+}
+
+.card.hover {
+  transition: all 0.2s ease;
+}
+
+.card.hover:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Padding styles */
+.paddingNone {
+  padding: 0;
+}
+
+.paddingSmall {
+  padding: 12px;
+}
+
+.paddingMedium {
+  padding: 16px;
+}
+
+.paddingLarge {
+  padding: 24px;
+}
+
+/* Shadow styles */
+.shadowNone {
+  box-shadow: none;
+}
+
+.shadowSmall {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.shadowMedium {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.shadowLarge {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
