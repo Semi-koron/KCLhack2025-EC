@@ -11,7 +11,7 @@
 
 'use client'; // クライアントコンポーネントとして指定（useStateを使うため）
 
-import { useState } from 'react';
+import { useState, use } from 'react';
 import { useRouter } from 'next/navigation';
 import Button from '@/components/Button';
 import Card from '@/components/Card';
@@ -53,20 +53,23 @@ const mockProducts: Product[] = [
 
 // ページコンポーネントのProps型
 interface PageProps {
-  params: {
+  params: Promise<{
     id: string; // URLから取得される商品ID
-  };
+  }>;
 }
 
 export default function ProductDetailPage({ params }: PageProps) {
   const router = useRouter();
+  
+  // React.use()でparamsをアンラップ（Next.js 15の新しい方式）
+  const resolvedParams = use(params);
   
   // State（状態）の定義
   const [quantity, setQuantity] = useState(1); // 購入数量
   const [selectedImage, setSelectedImage] = useState(0); // 選択中の画像インデックス
 
   // URLのIDから商品を検索
-  const productId = parseInt(params.id);
+  const productId = parseInt(resolvedParams.id);
   const product = mockProducts.find(p => p.id === productId);
 
   // 商品が見つからない場合の処理
