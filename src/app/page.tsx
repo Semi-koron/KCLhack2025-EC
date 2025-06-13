@@ -34,7 +34,11 @@ export default function Home() {
       <header className={styles.header}>
         <div className={styles.headerTop}>
           <div className={styles.logo}>
-            <h1>ShopHub</h1>
+            <div className={styles.circle_main}>
+              <div className={styles.circle_sub}></div>
+              <p className={styles.kcl}>KCL</p>
+            </div>
+            <h1>Kyutech Cart & Life</h1>
           </div>
           <div className={styles.searchBar}>
             {/* 検索バー <-Task2-2 */}

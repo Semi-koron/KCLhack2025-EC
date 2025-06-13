@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&display=swap');
+
 .page {
   min-height: 100vh;
   background: #f8f9fa;
@@ -19,8 +21,14 @@
   margin: 0 auto;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .logo h1 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #2d3748;
   margin: 0;
@@ -118,4 +126,48 @@
   .main {
     padding: 0 16px;
   }
+}
+
+.circle_main {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  background: #000534;
+  overflow: hidden;
+}
+
+.circle_sub {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  border: 2.5px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kcl {
+  width: 60px;
+  height: 20px;
+  z-index: 200000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Genos", sans-serif;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  background: #000534;
+  margin: 0;
+  padding: 0 0 4px 2px;
+  font-family: "Genos", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
