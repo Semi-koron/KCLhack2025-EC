@@ -73,12 +73,7 @@ export default function Home() {
             <h1>ShopHub</h1>
           </div>
           <div className={styles.searchBar}>
-            <input
-              type="text"
-              placeholder="商品を検索..."
-              value={searchKeyword}
-              onChange={(e) => setSearchKeyword(e.target.value)}
-            />
+            {/* 検索バー <-Task2-2 */}
           </div>
           <div className={styles.headerActions}>
             <button className={styles.cartButton}>🛒 カート (0)</button>

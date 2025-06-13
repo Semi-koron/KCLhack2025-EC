@@ -107,13 +107,13 @@ export default function Home() {
 
 **ファイル**: `src/app/page.tsx`
 
-検索バーに双方向データバインディングを実装しましょう。
+検索バーの入力値と状態（searchKeyword）を常に同じになるようにしましょう。
 
 ```tsx
 <input
   type="text"
   placeholder="商品を検索..."
-  value={searchKeyword}
+  value={/* 自分で考えてみよう */}
   onChange={(e) => setSearchKeyword(e.target.value)}
 />
 ```
@@ -123,6 +123,8 @@ export default function Home() {
 - 制御されたコンポーネント（Controlled Component）
 - `onChange`イベントハンドラー
 - `e.target.value`でのユーザー入力取得
+
+※この Task が終わった段階では検索はまだ機能しません。
 
 ---
 
