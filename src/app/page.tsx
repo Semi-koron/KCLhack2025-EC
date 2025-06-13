@@ -63,17 +63,7 @@ export default function Home() {
   const [filteredProducts, setFilteredProducts] =
     useState<Product[]>(mockProducts);
 
-  // 検索結果のフィルタリング
-  useEffect(() => {
-    const lowerCaseKeyword = searchKeyword.toLowerCase();
-    const results = mockProducts.filter(
-      (product) =>
-        product.name.toLowerCase().includes(lowerCaseKeyword) ||
-        (product.category &&
-          product.category.toLowerCase().includes(lowerCaseKeyword))
-    );
-    setFilteredProducts(results);
-  }, [searchKeyword]);
+  // 検索結果のフィルタリング<-Task3-1
 
   return (
     <div className={styles.page}>

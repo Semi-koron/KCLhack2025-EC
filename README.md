@@ -135,19 +135,18 @@ export default function Home() {
 **ファイル**: `src/app/page.tsx`
 
 商品の検索フィルタリング機能を実装しましょう。
+以下 Input に入力された文字を元に商品をフィルターしてくれるコード
 
 ```typescript
 // 検索結果のフィルタリング
-useEffect(() => {
-  const lowerCaseKeyword = searchKeyword.toLowerCase();
-  const results = mockProducts.filter(
-    (product) =>
-      product.name.toLowerCase().includes(lowerCaseKeyword) ||
-      (product.category &&
-        product.category.toLowerCase().includes(lowerCaseKeyword))
-  );
-  setFilteredProducts(results);
-}, [searchKeyword]);
+const lowerCaseKeyword = searchKeyword.toLowerCase();
+const results = mockProducts.filter(
+  (product) =>
+    product.name.toLowerCase().includes(lowerCaseKeyword) ||
+    (product.category &&
+      product.category.toLowerCase().includes(lowerCaseKeyword))
+);
+setFilteredProducts(results);
 ```
 
 **学習ポイント**:
