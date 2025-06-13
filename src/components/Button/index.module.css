@@ -1,10 +1,5 @@
 .button {
-  font-weight: 600;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  opacity: 1;
-  transition: all 0.2s;
+  /* ここにスタイルを定義 */
 }
 
 .button:disabled {
@@ -14,8 +9,7 @@
 
 /* Variant styles */
 .primary {
-  background: #3182ce;
-  color: white;
+  /* ここにスタイルを定義 */
 }
 
 .primary:hover:not(:disabled) {
@@ -23,9 +17,7 @@
 }
 
 .secondary {
-  background: #f7fafc;
-  color: #4a5568;
-  border: 2px solid #e2e8f0;
+  /* ここにスタイルを定義 */
 }
 
 .secondary:hover:not(:disabled) {
