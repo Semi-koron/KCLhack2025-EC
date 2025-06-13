@@ -29,40 +29,42 @@ export default function ProductList({ products }: ProductListProps) {
   return (
     <div className={styles.productGrid}>
       {products.map((product) => (
-        // ここにLinkタグを実装してみよう <-Task4-1
-        <div className={styles.productCard}>
-          <div className={styles.productImage}></div>
+        <div key={product.id}>
+          {/* ここにLinkタグを実装してみよう <-Task4-1 */}
+          <div className={styles.productCard}>
+            <div className={styles.productImage}></div>
 
-          <div className={styles.productInfo}>
-            {product.category && (
-              <span className={styles.categoryBadge}>{product.category}</span>
-            )}
+            <div className={styles.productInfo}>
+              {product.category && (
+                <span className={styles.categoryBadge}>{product.category}</span>
+              )}
 
-            <h3 className={styles.productName}>{product.name}</h3>
+              <h3 className={styles.productName}>{product.name}</h3>
 
-            <p className={styles.productPrice}>
-              ¥{product.price.toLocaleString()}
-            </p>
+              <p className={styles.productPrice}>
+                ¥{product.price.toLocaleString()}
+              </p>
 
-            <div className={styles.productActions}>
-              <button
-                className={styles.addToCartBtn}
-                onClick={(e) => {
-                  e.preventDefault();
-                  alert(`${product.name} をカートに追加しました！`);
-                }}
-              >
-                カートに追加
-              </button>
-              <button
-                className={styles.wishlistBtn}
-                onClick={(e) => {
-                  e.preventDefault();
-                  alert(`${product.name} をお気に入りに追加しました！`);
-                }}
-              >
-                ♡
-              </button>
+              <div className={styles.productActions}>
+                <button
+                  className={styles.addToCartBtn}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    alert(`${product.name} をカートに追加しました！`);
+                  }}
+                >
+                  カートに追加
+                </button>
+                <button
+                  className={styles.wishlistBtn}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    alert(`${product.name} をお気に入りに追加しました！`);
+                  }}
+                >
+                  ♡
+                </button>
+              </div>
             </div>
           </div>
         </div>

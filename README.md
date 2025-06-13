@@ -178,13 +178,11 @@ export default function ProductList({ products }: ProductListProps) {
   return (
     <div className={styles.productGrid}>
       {products.map((product) => (
-        <Link
-          key={product.id}
-          href={/* 自分で考えてみよう */}
-          className={styles.productLink}
-        >
-          <div className={styles.productCard}>省略</div>
-        </Link>
+        <div key={product.id}>
+          <Link href={/* 自分で考えてみよう */} className={styles.productLink}>
+            <div className={styles.productCard}>省略</div>
+          </Link>
+        </div>
       ))}
     </div>
   );
