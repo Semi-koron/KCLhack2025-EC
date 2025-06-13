@@ -159,15 +159,15 @@ useEffect(() => {
 
 ---
 
-### Phase 4: コンポーネント設計と再利用性
+### Phase 4: 画面遷移とコンポーネント設計
 
-**学習目標**: 再利用可能なコンポーネントの設計方法を学ぶ
+**学習目標**: 画面遷移の仕方と、コンポーネントの作り方を学ぶ
 
-#### Task 4-1: ProductList コンポーネントの作成
+#### Task 4-1: ProductList 画面遷移できるようにしよう
 
 **ファイル**: `src/components/ProductList/index.tsx`
 
-商品一覧を表示するコンポーネントを作成しましょう。
+商品詳細を見るためにを画面遷移を作成しましょう。
 
 ```typescript
 interface ProductListProps {
@@ -180,10 +180,10 @@ export default function ProductList({ products }: ProductListProps) {
       {products.map((product) => (
         <Link
           key={product.id}
-          href={`/product/${product.id}`}
+          href={/* 自分で考えてみよう */}
           className={styles.productLink}
         >
-          {/* 商品カードの実装 */}
+          <div className={styles.productCard}>省略</div>
         </Link>
       ))}
     </div>
