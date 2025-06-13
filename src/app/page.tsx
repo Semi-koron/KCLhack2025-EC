@@ -15,13 +15,7 @@ import { useState, useEffect } from "react"; // React hooks
 import styles from "./page.module.css";
 import ProductList from "@/components/ProductList";
 
-// 商品データの型定義（TypeScriptの学習）
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  category?: string; // オプションのプロパティ
-}
+// 商品データの型定義（TypeScriptの学習） <-Task1-1
 
 // モック商品データ - 実際のアプリではAPIから取得 <-Task1-2
 
