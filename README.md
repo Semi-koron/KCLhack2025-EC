@@ -233,12 +233,6 @@ export default function Button({
 - オプショナルプロパティ
 - `children` props の活用
 
-#### Task 4-3: Card コンポーネントの作成
-
-**ファイル**: `src/components/Card/index.tsx`
-
-汎用的なカードコンポーネントを作成しましょう。
-
 ---
 
 ### Phase 5: CSS Modules 実装
