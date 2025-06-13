@@ -89,12 +89,7 @@ const mockProducts: Product[] = [
 検索機能のための状態を追加しましょう。
 
 ```typescript
-export default function Home() {
-  // 検索キーワードの状態管理
-  const [searchKeyword, setSearchKeyword] = useState("");
-
-  // ... 他のコード
-}
+const [searchKeyword, setSearchKeyword] = useState("");
 ```
 
 **学習ポイント**:

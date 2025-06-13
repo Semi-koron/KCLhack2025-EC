@@ -59,7 +59,7 @@ const mockProducts: Product[] = [
 
 export default function Home() {
   // 検索キーワードの状態管理
-  const [searchKeyword, setSearchKeyword] = useState("");
+  // 検索キーワードの状態を管理するためのuseStateフック <-Task2-1
   const [filteredProducts, setFilteredProducts] =
     useState<Product[]>(mockProducts);
 
