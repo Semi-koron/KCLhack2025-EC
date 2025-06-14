@@ -228,6 +228,7 @@ export default function ProductList({ products }: ProductListProps) {
 コンポーネントを作成し終わったら、
 `src/app/product/[id]/page.tsx`
 の Task4-2 が終わったら有効化の部分のコメントアウト{/\* \*/}と//を外してください!
+5個ほどコメントアウトを外すところがあります！
 
 ```typescript
 interface ButtonProps {
