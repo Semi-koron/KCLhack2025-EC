@@ -165,6 +165,30 @@ setFilteredProducts(results);
 **ファイル**: `src/components/ProductList/index.tsx`
 
 商品詳細を見るためにを画面遷移を作成しましょう。
+商品詳細ページのパスは
+
+```
+/product/2
+```
+
+や
+
+```
+/product/4
+```
+
+のような形で、/product/
+の後に id を入れています。
+
+※この時のプロダクト単体の id を取り出したいときは products(プロダクト複数)に map 関数が使用されており、
+{}の中の処理が products 全体で処理されるので、
+
+```typescript
+{ id: 1, name: "ワイヤレスヘッドフォン", price: 12800, category: "家電" }
+```
+
+から順番に product にプロダクト単体のデータが入っていきます、
+name を取り出したいときは product.name で取り出せます。
 
 ```typescript
 interface ProductListProps {
