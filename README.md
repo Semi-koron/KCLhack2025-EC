@@ -227,7 +227,7 @@ export default function ProductList({ products }: ProductListProps) {
 再利用可能なボタンコンポーネントを作成しましょう。
 コンポーネントを作成し終わったら、
 `src/app/product/[id]/page.tsx`
-の Task4-2 が終わったら有効化の部分のコメントアウト{/\* \*/}を外してください!
+の Task4-2 が終わったら有効化の部分のコメントアウト{/\* \*/}と//を外してください!
 
 ```typescript
 interface ButtonProps {
