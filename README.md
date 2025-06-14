@@ -216,7 +216,6 @@ export default function ProductList({ products }: ProductListProps) {
 
 **学習ポイント**:
 
-- コンポーネントの Props 設計
 - `map`メソッドでのリスト表示
 - `key`プロパティの重要性
 - コンポーネントの責任分離
