@@ -21,6 +21,10 @@ EC サイト風の Web アプリケーションを段階的に実装しながら
 まず、開発サーバーを起動してください：
 
 ```bash
+npm install
+```
+
+```bash
 npm run dev
 ```
 
@@ -258,7 +262,6 @@ export default function ProductList({ products }: ProductListProps) {
 
 **学習ポイント**:
 
-- コンポーネントの Props 設計
 - `map`メソッドでのリスト表示
 - `key`プロパティの重要性
 - コンポーネントの責任分離
@@ -270,7 +273,8 @@ export default function ProductList({ products }: ProductListProps) {
 再利用可能なボタンコンポーネントを作成しましょう。
 コンポーネントを作成し終わったら、
 `src/app/product/[id]/page.tsx`
-の Task4-2 が終わったら有効化の部分のコメントアウト{/\* \*/}を外してください!
+の Task4-2 が終わったら有効化の部分のコメントアウト{/\* \*/}と//を外してください!
+5個ほどコメントアウトを外すところがあります！
 
 ```typescript
 interface ButtonProps {
