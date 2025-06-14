@@ -12,14 +12,7 @@
 
 import Link from "next/link";
 import styles from "./index.module.css";
-
-// 商品データの型定義
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  category?: string;
-}
+import type { Product } from "@/app/page";
 
 interface ProductListProps {
   products: Product[];

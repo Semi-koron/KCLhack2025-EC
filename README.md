@@ -42,13 +42,18 @@ npm run dev
 
 ```typescript
 // 商品データの型定義（TypeScriptの学習）
-interface Product {
+export interface Product {
   id: number;
   name: string;
   price: number;
-  category?: string; // オプションのプロパティ
+  description: string;
+  category: string;
+  stock: number;
+  images?: string[];
 }
 ```
+
+※ `export` は他のファイルからこの型をインポートできるようにするためのものです。
 
 **学習ポイント**:
 
@@ -65,17 +70,56 @@ interface Product {
 
 ```typescript
 // モック商品データ - 実際のアプリではAPIから取得
-const mockProducts: Product[] = [
-  { id: 1, name: "ワイヤレスヘッドフォン", price: 12800, category: "家電" },
-  { id: 2, name: "スマートウォッチ", price: 25000, category: "家電" },
-  { id: 3, name: "デザインTシャツ", price: 3200, category: "ファッション" },
-  { id: 4, name: "プログラミング入門書", price: 2800, category: "本・雑誌" },
-  { id: 5, name: "コーヒーメーカー", price: 8500, category: "家電" },
-  { id: 6, name: "ランニングシューズ", price: 12000, category: "スポーツ" },
-  { id: 7, name: "ワイヤレスマウス", price: 4200, category: "家電" },
-  { id: 8, name: "料理本", price: 1800, category: "本・雑誌" },
+export const mockProducts: Product[] = [
+  {
+    id: 1,
+    name: "ワイヤレスヘッドフォン",
+    price: 12800,
+    description:
+      "高音質なワイヤレスヘッドフォンです。ノイズキャンセリング機能付きで、長時間の使用でも疲れにくい設計になっています。",
+    category: "家電",
+    stock: 15,
+  },
+  {
+    id: 2,
+    name: "スマートウォッチ",
+    price: 25000,
+    description:
+      "健康管理機能が充実したスマートウォッチ。心拍数測定、歩数計、睡眠監視など多彩な機能を搭載しています。",
+    category: "家電",
+    stock: 8,
+  },
+  {
+    id: 3,
+    name: "デザインTシャツ",
+    price: 3200,
+    description:
+      "シンプルで洗練されたデザインのTシャツです。高品質なコットン素材を使用し、着心地が良く耐久性に優れています。",
+    category: "ファッション",
+    stock: 25,
+  },
+  {
+    id: 4,
+    name: "プログラミング入門書",
+    price: 2800,
+    description:
+      "初心者にも分かりやすく解説されたプログラミング入門書です。基礎から応用まで幅広くカバーしています。",
+    category: "本・雑誌",
+    stock: 12,
+  },
+  {
+    id: 5,
+    name: "コーヒーメーカー",
+    price: 8500,
+    description:
+      "本格的なコーヒーが楽しめる全自動コーヒーメーカーです。豆の挽きから抽出まで一度に行えます。",
+    category: "家電",
+    stock: 7,
+  },
 ];
 ```
+
+※ `export` は他のファイルからこの型をインポートできるようにするためのものです。
 
 ---
 
@@ -109,7 +153,7 @@ const [searchKeyword, setSearchKeyword] = useState("");
 <input
   type="text"
   placeholder="商品を検索..."
-  value={/* 自分で考えてみよう */}
+  value={/* どの変数が入るか自分で考えてみよう */}
   onChange={(e) => setSearchKeyword(e.target.value)}
 />
 ```
@@ -201,7 +245,9 @@ export default function ProductList({ products }: ProductListProps) {
       {products.map((product) => (
         <div key={product.id}>
           <Link href={/* 自分で考えてみよう */} className={styles.productLink}>
-            <div className={styles.productCard}>省略</div>
+            <div className={styles.productCard}>
+              省略...
+            </div>
           </Link>
         </div>
       ))}
