@@ -165,6 +165,30 @@ setFilteredProducts(results);
 **ファイル**: `src/components/ProductList/index.tsx`
 
 商品詳細を見るためにを画面遷移を作成しましょう。
+商品詳細ページのパスは
+
+```
+/product/2
+```
+
+や
+
+```
+/product/4
+```
+
+のような形で、/product/
+の後に id を入れています。
+
+※この時のプロダクト単体の id を取り出したいときは products(プロダクト複数)に map 関数が使用されており、
+{}の中の処理が products 全体で処理されるので、
+
+```typescript
+{ id: 1, name: "ワイヤレスヘッドフォン", price: 12800, category: "家電" }
+```
+
+から順番に product にプロダクト単体のデータが入っていきます、
+name を取り出したいときは product.name で取り出せます。
 
 ```typescript
 interface ProductListProps {
@@ -198,6 +222,9 @@ export default function ProductList({ products }: ProductListProps) {
 **ファイル**: `src/components/Button/index.tsx`
 
 再利用可能なボタンコンポーネントを作成しましょう。
+コンポーネントを作成し終わったら、
+`src/app/product/[id]/page.tsx`
+の Task4-2 が終わったら有効化の部分のコメントアウト{/\* \*/}を外してください!
 
 ```typescript
 interface ButtonProps {
@@ -253,7 +280,8 @@ src/components/
     └── index.module.css
 ```
 
-**例: Button/index.module.css**
+以下の CSS をボタンの moduleCSS ファイルに書き込みましょう
+**: Button/index.module.css**
 
 ```css
 .button {
