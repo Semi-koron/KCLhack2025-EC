@@ -222,6 +222,9 @@ export default function ProductList({ products }: ProductListProps) {
 **ファイル**: `src/components/Button/index.tsx`
 
 再利用可能なボタンコンポーネントを作成しましょう。
+コンポーネントを作成し終わったら、
+`src/app/product/[id]/page.tsx`
+の Task4-2 が終わったら有効化の部分のコメントアウト{/\* \*/}を外してください!
 
 ```typescript
 interface ButtonProps {
@@ -277,7 +280,8 @@ src/components/
     └── index.module.css
 ```
 
-**例: Button/index.module.css**
+以下の CSS をボタンの moduleCSS ファイルに書き込みましょう
+**: Button/index.module.css**
 
 ```css
 .button {
