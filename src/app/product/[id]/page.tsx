@@ -359,7 +359,8 @@ export default function ProductDetailPage({ params }: PageProps) {
       <div className={styles.container}>
         <div className={styles.notFound}>
           <h1>商品が見つかりません</h1>
-          {/* <Button onClick={() => router.back()}>　<- Task4-2が完了したら有効にする
+          {/* ↓ Task 4-2 が完了したら有効にする */}
+          {/* <Button onClick={() => router.back()}>
             戻る
           </Button> */}
         </div>
@@ -429,7 +430,8 @@ export default function ProductDetailPage({ params }: PageProps) {
             <div className={styles.quantitySection}>
               <label className={styles.quantityLabel}>数量:</label>
               <div className={styles.quantityControls}>
-                {/* <Button <-Task4-2が完了したら有効にする
+                {/* ↓ Task 4-2 が完了したら有効にする */}
+                {/* <Button
                   variant="secondary" 
                   size="small"
                   onClick={decreaseQuantity}
@@ -438,7 +440,8 @@ export default function ProductDetailPage({ params }: PageProps) {
                   -
                 </Button> */}
                 <span className={styles.quantityDisplay}>{quantity}</span>
-                {/* <Button <-Task4-2が完了したら有効にする
+                {/* ↓ Task 4-2 が完了したら有効にする */}
+                {/* <Button
                   variant="secondary" 
                   size="small"
                   onClick={increaseQuantity}
@@ -451,7 +454,8 @@ export default function ProductDetailPage({ params }: PageProps) {
 
             {/* アクションボタン */}
             <div className={styles.actionButtons}>
-              {/* <Button <-Task4-2が完了したら有効にする
+              {/* Task 4-2 が完了したら有効にする */}
+              {/* <Button
                 variant="primary" 
                 size="large"
                 onClick={addToCart}

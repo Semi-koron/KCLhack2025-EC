@@ -44,12 +44,13 @@ export default function Button({
   // ボタンコンポーネントのHTML
   return (
     <button
+      // ↓ Task 4-2 Button コンポーネントの作成
       // onClick属性を割り振り
       // disabled属性を割り振り
       // クラス名を割り振り
       type="button"
     >
-      {/* ボタンの内容を表示 */}
+      {/* ↓ Task 4-2 Button コンポーネントの作成 */}
     </button>
   );
 }

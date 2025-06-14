@@ -30,7 +30,7 @@ export default function ProductList({ products }: ProductListProps) {
     <div className={styles.productGrid}>
       {products.map((product) => (
         <div key={product.id}>
-          {/* ここにLinkタグを実装してみよう <-Task4-1 */}
+          {/* ↓ Task 4-1 画面遷移できるようにしよう */}
           <div className={styles.productCard}>
             <div className={styles.productImage}></div>
 

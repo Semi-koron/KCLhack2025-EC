@@ -15,19 +15,18 @@ import { useState, useEffect } from "react"; // React hooks
 import styles from "./page.module.css";
 import ProductList from "@/components/ProductList";
 
-// 商品データの型定義（TypeScriptの学習） <-Task1-1
+// Task 1-1 Product 型の定義
 
-// モック商品データ - 実際のアプリではAPIから取得 <-Task1-2
+// Task 1-2 モックデータの作成
 
 export default function Home() {
-  
-  // 検索キーワードの状態を管理するためのuseStateフック <-Task2-1
+  // Task 2-1 検索キーワードの状態管理
 
   // ↓ Task1-2が完了したら有効にする
   // const [filteredProducts, setFilteredProducts] =
   //   useState<Product[]>(mockProducts);
 
-  // 検索結果のフィルタリング<-Task3-1
+  // Task 3-1 検索フィルタリングの実装
 
   return (
     <div className={styles.page}>
@@ -41,7 +40,7 @@ export default function Home() {
             <h1>Kyutech Cart & Life</h1>
           </div>
           <div className={styles.searchBar}>
-            {/* 検索バー <-Task2-2 */}
+            {/* Task 2-2 検索入力フィールドの実装 */}
           </div>
           <div className={styles.headerActions}>
             <button className={styles.cartButton}>🛒 カート (0)</button>
@@ -49,8 +48,8 @@ export default function Home() {
         </div>
       </header>
       <main className={styles.main}>
-        {/* ProductListコンポーネントを使用（フィルタリングされた商品を渡す） */}
-        {/* <ProductList products={filteredProducts} /> <- Task1-2が完了したら有効にする */}
+        {/* ↓ Task 1-2 が完了したら有効にする */}
+        {/* <ProductList products={filteredProducts} /> */}
       </main>
     </div>
   );
